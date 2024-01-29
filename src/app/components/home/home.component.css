@@ -1,0 +1,207 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #444;
+}
+
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.image {
+  width: 60vh;
+  height: auto;
+  background-size: cover;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+main{
+  background-image: linear-gradient(#ffffff,#71c5d6fe,#00934074);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+}
+
+/* Establece la altura del carousel */
+.carousel-item {
+    height: 50vh; /* 50% de la altura de la pantalla */
+    overflow: hidden; /* El 50% de la altura de la pantalla */
+  }
+  
+  /* Ajusta la altura de las imágenes dentro del carousel */
+  .carousel-item img {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 100%; /* Ocupa todo el alto del contenedor */
+    object-fit: cover; /* Recorta la imagen para que se ajuste al contenedor */
+    object-position: center;
+  }
+
+  .container {
+    display: flex; /* Utiliza flexbox para la disposición */
+    justify-content: center; /* Espacia las columnas */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en dispositivos pequeños */
+  }
+  
+  .columna-izquierda, .columna-derecha {
+    width: 48%; /* Establece el ancho de cada columna */
+    padding: 10px; /* Añade espacio alrededor del contenido */
+    box-sizing: border-box; /* Incluye el padding en el ancho de las columnas */
+  }
+  
+  /* Opcional: Estilos adicionales para las columnas */
+  .columna-izquierda {
+    background-color: transparent; /* Color de fondo de la columna izquierda */
+  }
+  
+  .columna-derecha {
+    background-color: transparent; /* Color de fondo de la columna derecha */
+  }
+  
+  /* Media query para dispositivos con un ancho máximo de 767px (generalmente dispositivos móviles) */
+  @media (max-width: 767px) {
+    .container {
+      flex-direction: column; /* Cambia la dirección del flexbox a columna */
+    }
+  
+    .columna-izquierda, .columna-derecha {
+      width: 100%; /* Establece el ancho al 100% para ocupar toda la pantalla */
+    }
+  }
+
+
+  .custom-btn {
+    width: 330px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+  
+  .btn-7 {
+    background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
+      line-height: 42px;
+      padding: 0;
+      border: none;
+    }
+    .btn-7 span {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .btn-7:before,
+    .btn-7:after {
+      position: absolute;
+      content: "";
+      right: 0;
+      bottom: 0;
+      background: rgba(251,75,2,1);
+      box-shadow:
+       -7px -7px 20px 0px rgba(255,255,255,.9),
+       -4px -4px 5px 0px rgba(255,255,255,.9),
+       7px 7px 20px 0px rgba(0,0,0,.2),
+       4px 4px 5px 0px rgba(0,0,0,.3);
+      transition: all 0.3s ease;
+    }
+    .btn-7:before{
+       height: 0%;
+       width: 2px;
+    }
+    .btn-7:after {
+      width: 0%;
+      height: 2px;
+    }
+    .btn-7:hover{
+      color: rgba(251,75,2,1);
+      background: transparent;
+    }
+    .btn-7:hover:before {
+      height: 100%;
+    }
+    .btn-7:hover:after {
+      width: 100%;
+    }
+    .btn-7 span:before,
+    .btn-7 span:after {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 0;
+      background: rgba(251,75,2,1);
+      box-shadow:
+       -7px -7px 20px 0px rgba(255,255,255,.9),
+       -4px -4px 5px 0px rgba(255,255,255,.9),
+       7px 7px 20px 0px rgba(0,0,0,.2),
+       4px 4px 5px 0px rgba(0,0,0,.3);
+      transition: all 0.3s ease;
+    }
+    .btn-7 span:before {
+      width: 2px;
+      height: 0%;
+    }
+    .btn-7 span:after {
+      height: 2px;
+      width: 0%;
+    }
+    .btn-7 span:hover:before {
+      height: 100%;
+    }
+    .btn-7 span:hover:after {
+      width: 100%;
+    }

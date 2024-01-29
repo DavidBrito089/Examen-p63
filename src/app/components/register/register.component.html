@@ -1,0 +1,70 @@
+<div id="back">
+    <canvas id="canvas" class="canvas-back"
+        style="-webkit-user-drag: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); width: 1626.03px; height: 288.254px;"
+        width="2561" height="453"></canvas>
+    <div class="backRight">
+        <div class="content">
+            <img src="https://flyingduckstudiolab.co.uk/wp-content/uploads/2022/09/01_FlyingDuck_Animation_Icon_v01.gif" alt="Money">
+        </div>            
+    </div>
+    <div class="backLeft">
+        <div class="content">
+            <img src="https://gaztenpresa.org/wp-content/uploads/2019/12/FINANCIACION-Texto-1-TR.gif" alt="subvencion">
+        </div>  
+    </div>
+</div>
+
+<div id="slideBox" style="margin-left: 50%;">
+    <div class="topLayer" style="margin-left: 0px;">
+        <div class="left">
+            <div class="content">
+                <h2>Registrarse</h2>
+                <form id="form-signup" method="post" onsubmit="return false;">
+                    <div class="form-element form-stack">
+                        <label for="email" class="form-label">Correo</label>
+                        <input id="email" type="email" name="email">
+                    </div>
+                    <div class="form-element form-stack">
+                        <label for="username-signup" class="form-label">Nombre de Usuario</label>
+                        <input id="username-signup" type="text" name="username">
+                    </div>
+                    <div class="form-element form-stack">
+                        <label for="password-signup" class="form-label">Contraseña</label>
+                        <input id="password-signup" type="password" name="password">
+                    </div>
+                    <div class="form-element form-checkbox">
+                        <input id="confirm-terms" type="checkbox" name="confirm" value="yes" class="checkbox">
+                        <label for="confirm-terms">I agree to the <a href="#">Terms of Service</a> and <a
+                                href="#">Privacy Policy</a></label>
+                    </div>
+                    <div class="form-element form-submit">
+                        <button id="signUp" class="signup" type="submit" name="signup">Registrarse</button>
+                            <button id="goLeft" class="signup off">Iniciar sesión</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="right">
+            <div class="content">
+                <h2>Iniciar sesión</h2>
+                <form id="form-login" method="post" onsubmit="return false;">
+                    <div class="form-element form-stack">
+                        <label for="username-login" class="form-label">Correo</label>
+                        <input id="username-login" type="text" name="username">
+                    </div>
+                    <div class="form-element form-stack">
+                        <label for="password-login" class="form-label">Contraseña</label>
+                        <input id="password-login" type="password" name="password">
+                    </div>
+                    <div class="form-element form-submit">
+                        
+                        <button id="logIn" class="login" type="submit" name="login">
+                            <a href="/private"class="mi-enlace">Iniciar</a>
+                        </button>                
+                        <button id="goRight" class="login off" name="signup">Registrarse</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
