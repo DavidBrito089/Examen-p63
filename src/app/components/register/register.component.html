@@ -19,18 +19,18 @@
         <div class="left">
             <div class="content">
                 <h2>Registrarse</h2>
-                <form id="form-signup" method="post" onsubmit="return false;">
+                <form id="form-signup" method="post" (submit)="signUp()">
                     <div class="form-element form-stack">
                         <label for="email" class="form-label">Correo</label>
-                        <input id="email" type="email" name="email">
+                        <input id="email" [(ngModel)]="user.correo"  type="email" name="email"  required>
                     </div>
                     <div class="form-element form-stack">
                         <label for="username-signup" class="form-label">Nombre de Usuario</label>
-                        <input id="username-signup" type="text" name="username">
+                        <input id="username-signup" [(ngModel)]="user.nombre" type="text" name="username" required>
                     </div>
                     <div class="form-element form-stack">
                         <label for="password-signup" class="form-label">Contraseña</label>
-                        <input id="password-signup" type="password" name="password">
+                        <input id="password-signup"[(ngModel)]="user.contrasena" type="password" name="password" required>
                     </div>
                     <div class="form-element form-checkbox">
                         <input id="confirm-terms" type="checkbox" name="confirm" value="yes" class="checkbox">
@@ -47,14 +47,14 @@
         <div class="right">
             <div class="content">
                 <h2>Iniciar sesión</h2>
-                <form id="form-login" method="post" onsubmit="return false;">
-                    <div class="form-element form-stack">
+                <form id="form-login" method="post" (submit)="signUp()">
+                    <div class="form-element form-stack">   
                         <label for="username-login" class="form-label">Correo</label>
-                        <input id="username-login" type="text" name="username">
+                        <input id="username-login" [(ngModel)]="user.correo" type="text" name="username">
                     </div>
                     <div class="form-element form-stack">
                         <label for="password-login" class="form-label">Contraseña</label>
-                        <input id="password-login" type="password" name="password">
+                        <input id="password-login"[(ngModel)]="user.contrasena" type="password" name="password">
                     </div>
                     <div class="form-element form-submit">
                         

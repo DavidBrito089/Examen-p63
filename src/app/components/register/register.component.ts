@@ -1,10 +1,48 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
+
 export class RegisterComponent {
+
+  user = {
+    correo:'',   
+    nombre:'', 
+    contrasena:'',
+  }
+
+  constructor(
+    private authService: AuthService,
+    private router: Router
+    ) { }
+
+  signUp(){
+    this.authService.signUpUser(this.user)
+    .subscribe(
+      res => {
+        console.log(res);
+        localStorage.setItem('token', res.token);
+        this.router.navigate(['/login']);
+      },
+      err => console.log(err)
+    )
+  }
+
+  signIn() {
+    this.authService.signInUser(this.user)
+      .subscribe(
+        res => {
+          console.log(res);
+          localStorage.setItem('token', res.token);
+          this.router.navigate(['/private']);
+        },
+        err => console.log(err)
+      )
+  }
 
 }
