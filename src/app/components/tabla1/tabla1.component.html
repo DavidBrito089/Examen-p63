@@ -3,20 +3,22 @@
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Titulo</th>
-        <th scope="col">Cantidad</th>
-        <th scope="col">Currency</th>
+        <th scope="col">Fecha</th>
       </tr>
     </thead>
     <tbody>
     <tr *ngFor="let prueba3 of prueba2">
         <td>{{prueba3.identifier}}</td>
         <td>{{prueba3.title}}</td>
-        <td>{{prueba3.monetaryAmount}}</td>
-        <td>{{prueba3.currency}}</td>
+        <td>{{prueba3.BDNSregistrationDate}}</td>
       </tr>
      
     </tbody>
   </table>
+
+  <div class="boton">
+    <button class="button" (click)="descargarTabla()">Descargar Tabla</button>
+  </div>
 
 <!-- <tbody>
     <tr *ngFor="let prueba3 of prueba2">

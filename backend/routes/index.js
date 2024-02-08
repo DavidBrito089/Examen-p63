@@ -2,6 +2,7 @@ const { Router } = require('express');
 const router = Router();
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
+const axios = require('axios');
 
 router.get('/', (req, res) => {
     res.send('hello')
@@ -27,26 +28,52 @@ router.post('/signin', async (req, res) => {
     return res.status(200).json({ token });
 });
 
-router.delete('users/:id', (req, res) => {
+router.delete('/users/:id', async (req, res) => {
     const userId = req.params.id;
 
-    db.collection(collectionName).deleteOne({ _id: new ObjectID(userId) }, (err, result) => {
-        if (err) {
-            console.error('Error al eliminar el usuario:', err);
-            res.status(500).send('Error interno del servidor');
-            return;
+    try {
+        const deletedUser = await User.findByIdAndDelete(userId);
+
+        if (!deletedUser) {
+            return res.status(404).json({ error: 'Usuario no encontrado' });
         }
-        if (result.deletedCount === 0) {
-            res.status(404).send('Usuario no encontrado');
-            return;
-        }
-        res.send('Usuario eliminado correctamente');
-    });
+        return res.json({ message: 'Usuario eliminado correctamente' });
+    } catch (error) {
+        console.error('Error al eliminar usuario:', error);
+        return res.status(500).json({ error: 'Error interno del servidor' });
+    }
+});
+
+router.put('/usersUp/:id', async (req, res) => {
+    const userId = req.params.id;
+    const userData = req.body;
+    try {
+      const updatedUser = await User.findByIdAndUpdate(userId, userData, { new: true });
+      
+      if (!updatedUser) {
+        return res.status(404).json({ error: 'Usuario no encontrado' });
+      }
+      
+      return res.json(updatedUser);
+    } catch (error) {
+      console.error('Error al actualizar usuario:', error);
+      return res.status(500).json({ error: 'Error interno del servidor' });
+    }
+  });
+
+
+router.get('/users', async (req, res) => {
+    try {
+        const users = await User.find();
+        res.json(users);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
 });
 
 
 router.get('/usuarios/:id', async (req, res) => {
-     const userId = req.params.id;
+    const userId = req.params.id;
     try {
         const usuario = await User.findById(userId)
 
@@ -131,5 +158,16 @@ async function verifyToken(req, res, next) {
         return res.status(401).send('Unauhtorized Request');
     }
 }
+
+
+router.get('/subvenciones', async (req, res) => {
+    try {
+      const response = await axios.get('https://datos.unican.es/gobierno/3228/subvenciones.json');
+      res.json(response.data);
+    } catch (error) {
+      console.error('Error fetching subvenciones:', error);
+      res.status(500).json({ error: 'Error fetching subvenciones' });
+    }
+  });
 
 module.exports = router;

@@ -14,6 +14,11 @@ import {  HttpClientModule } from '@angular/common/http';
 import { Prueba1Service } from './prueba1.service';
 import { AuthService } from './services/auth.service';
 import { FormsModule } from '@angular/forms';
+import { AdminComponent } from './components/admin/admin.component';
+import { AdminService } from './services/admin.service';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +28,8 @@ import { FormsModule } from '@angular/forms';
     PrivateComponent,
     FooterComponent,
     TermsComponent,
-    Tabla1Component
+    Tabla1Component,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +37,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     HttpClientModule
   ],
-  providers: [Prueba1Service, AuthService],
+  providers: [Prueba1Service, AuthService, AdminService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

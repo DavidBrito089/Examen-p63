@@ -6,10 +6,14 @@ const configUrl='assets/datos.json';
   providedIn: 'root'
 })
 export class Prueba1Service {
-  obtenerDatos(){
-    return this.httpclient.get<prueba3[]>(configUrl);
-    }
+
+  private URL = 'http://localhost:3000/api';
   constructor(private httpclient: HttpClient) {
     console.log('El servicio Http esta funcionando…')
     }
+
+  obtenerDatos(){
+    return this.httpclient.get<any[]>(`${this.URL}/subvenciones`);
+   }
+
 }
