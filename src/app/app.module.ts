@@ -16,6 +16,8 @@ import { AuthService } from './services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './components/admin/admin.component';
 import { AdminService } from './services/admin.service';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 
@@ -29,13 +31,15 @@ import { AdminService } from './services/admin.service';
     FooterComponent,
     TermsComponent,
     Tabla1Component,
-    AdminComponent
+    AdminComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxChartsModule
   ],
   providers: [Prueba1Service, AuthService, AdminService ],
   bootstrap: [AppComponent]
