@@ -10,11 +10,7 @@ import { Router } from '@angular/router';
 
 export class RegisterComponent {
 
-  user = {
-    correo:'',   
-    nombre:'', 
-    contrasena:'',
-  }
+  user = { nombre: '', correo: '', contrasena: '' };
 
   constructor(
     private authService: AuthService,
@@ -22,14 +18,14 @@ export class RegisterComponent {
     ) { }
 
   signUp(){
-    if(this.user.correo!='' && this.user.contrasena!=''){
+    if(this.user.correo !='' && this.user.contrasena!=''){
       if(this.upsEmailValidator()=='bien' && this.user.contrasena.length>=6){
         this.authService.signUpUser(this.user)
       .subscribe(
         res => {
           console.log(res);
           localStorage.setItem('token', res.token);
-          this.router.navigate(['/private']);
+          this.router.navigate(['/tabla1']);
         },
         err => console.log(err)
       )
@@ -49,7 +45,7 @@ export class RegisterComponent {
             res => {
               console.log(res);
               localStorage.setItem('token', res.token);
-              this.router.navigate(['/private']);
+              this.router.navigate(['/tabla1']);
             },
             err =>{
               console.log(err)

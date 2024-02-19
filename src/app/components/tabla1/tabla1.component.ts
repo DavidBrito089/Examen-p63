@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { Prueba1Service } from '../../prueba1.service';
+import { Component, OnInit  } from '@angular/core';
+import { Prueba1Service } from '../../services/prueba1.service';
+import { AuthService } from '../../services/auth.service';
 import { prueba3 } from '../../prueba';
 import * as XLSX from 'xlsx';
 
@@ -8,14 +9,23 @@ import * as XLSX from 'xlsx';
   templateUrl: './tabla1.component.html',
   styleUrl: './tabla1.component.css'
 })
-export class Tabla1Component {
+export class Tabla1Component  implements OnInit{
+
+  data: any;
   prueba2: prueba3[] = [];
-  constructor(private prueba1service: Prueba1Service) {
+
+
+  constructor(private prueba1service: Prueba1Service, private authService: AuthService) {
+
     this.prueba1service.obtenerDatos().subscribe(data => {
       console.log(data);
       this.prueba2 = data;
       this.prueba2.find(item => item.fundedBy === 'PRESUPUESTOS GENERALES DE LAS COMUNIDADES AUTÓNOMAS (PCA)');
     });
+
+  }
+
+  ngOnInit(): void {
 
   }
 

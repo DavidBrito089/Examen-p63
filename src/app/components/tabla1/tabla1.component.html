@@ -6,6 +6,9 @@
   <li class="nav-item">
     <a class="nav-link" href="/dashboard">Dash board</a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/cambiar">Cambiar Contraseña</a>
+  </li>
 </ul>
 <table class="table">
     <thead>
@@ -20,6 +23,7 @@
         <td>{{prueba3.identifier}}</td>
         <td>{{prueba3.title}}</td>
         <td>{{prueba3.BDNSregistrationDate}}</td>
+        <td>{{prueba3.fundedBy}}</td>
       </tr>
      
     </tbody>
@@ -29,19 +33,6 @@
     <button class="button" (click)="descargarTabla()">Descargar Tabla</button>
   </div>
 
-<!-- <tbody>
-    <tr *ngFor="let prueba3 of prueba2">
-    <th scope="row">{{prueba3.about}}</th>
-    <td>{{prueba3.identifier}}</td>
-    <td>{{prueba3.title}}</td>
-    <th >{{prueba3.BDNSregistrationDate}}</th>
-    <td>{{prueba3.basesURL}}</td>
-    <td>{{prueba3.fundedBy}}</td>
-    <td>{{prueba3.monetaryAmount}}</td>
-    <td>{{prueba3.currency}}</td>
-    <td>{{prueba3.BDNSannouncementPermalink}}</td>
-    <td>{{prueba3.BDNSconcessionsPermalink}}</td>
-    </tr>
-    </tbody> -->
+
 
     

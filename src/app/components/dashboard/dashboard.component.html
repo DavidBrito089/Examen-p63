@@ -8,16 +8,14 @@
   </li>
 
 </ul>
-<div style="height: 300px;">
-    <ngx-charts-bar-vertical
-      [view]="[500,400]"
-      [results]="prueba2"
-      [xAxis]="true"
-      [yAxis]="true"
-      [legend]="true"
-      [showXAxisLabel]="true"
-      [showYAxisLabel]="true"
-      xAxisLabel="sudvenciones"
-      yAxisLabel="cantidad monetaria">
-    </ngx-charts-bar-vertical>
-  </div>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Cantidad Monetaria</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <canvas id="my-chart"></canvas>
+  </mat-card-content>
+</mat-card>
+<app-dashboard-pastel></app-dashboard-pastel>
+<app-dashboard-pastelngx></app-dashboard-pastelngx>

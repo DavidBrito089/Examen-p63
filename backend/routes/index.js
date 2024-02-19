@@ -170,4 +170,13 @@ router.get('/subvenciones', async (req, res) => {
     }
   });
 
+router.get('/data', verifyToken, async (req, res) => {
+    try {
+        const user = await User.findOne({ username: req.authData.username });
+        res.json({ message: 'Datos protegidos', user: user });
+    } catch (error) {
+        res.status(500).json({ message: 'Error en el servidor' });
+    }
+});
+
 module.exports = router;

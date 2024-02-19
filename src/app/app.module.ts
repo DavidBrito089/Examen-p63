@@ -11,13 +11,19 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TermsComponent } from './components/terms/terms.component';
 import { Tabla1Component } from './components/tabla1/tabla1.component';
 import {  HttpClientModule } from '@angular/common/http';
-import { Prueba1Service } from './prueba1.service';
+import { Prueba1Service } from './services/prueba1.service';
 import { AuthService } from './services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './components/admin/admin.component';
 import { AdminService } from './services/admin.service';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatCardModule } from '@angular/material/card';
+import { DashboardPastelComponent } from './components/dashboard-pastel/dashboard-pastel.component';
+import { DashboardPastelngxComponent } from './components/dashboard-pastelngx/dashboard-pastelngx.component';
+import { CambiarContraseniaUserComponent } from './components/cambiar-contrasenia-user/cambiar-contrasenia-user.component';
+
 
 
 
@@ -32,16 +38,20 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     TermsComponent,
     Tabla1Component,
     AdminComponent,
-    DashboardComponent
+    DashboardComponent,
+    DashboardPastelComponent,
+    DashboardPastelngxComponent,
+    CambiarContraseniaUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     HttpClientModule,
-    NgxChartsModule
+    NgxChartsModule,
+    MatCardModule,
+    FormsModule 
   ],
-  providers: [Prueba1Service, AuthService, AdminService ],
+  providers: [Prueba1Service, AuthService, AdminService, provideAnimationsAsync() ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

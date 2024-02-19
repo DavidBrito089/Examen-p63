@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   private URL = 'http://localhost:3000/api';
+
+  
   constructor(private http: HttpClient, private router: Router) { }
 
   signUpUser(user: any) {
@@ -33,6 +35,13 @@ export class AuthService {
 
   getToken() {
     return localStorage.getItem('token');
+  }
+
+  getData(token: string){
+    const headers = new HttpHeaders({
+      'Authorization': token
+    });
+    return this.http.get<any>(`${this.URL}/data`, { headers });
   }
 
 }

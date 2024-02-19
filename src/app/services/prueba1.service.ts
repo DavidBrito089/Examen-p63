@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import { prueba3 } from './prueba';
+import { prueba3 } from '../prueba';
 const configUrl='assets/datos.json';
 @Injectable({
   providedIn: 'root'
